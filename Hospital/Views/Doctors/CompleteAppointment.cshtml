@@ -1,0 +1,47 @@
+﻿ <h1>Complete Appointment with @Model.Name</h1>
+ <br><br>
+  <div>
+
+
+    <form action="/Appointment/CompleteAppointment" method="post">
+        <div class="mb-3">
+            <label for="exampleAppointmentName" class="form-label">Patient Name: </label>
+            <input type="text" class="form-control" id="exampleAppointmentName" name="PatientName" required>
+            <label for="exampleAppointmentDate" class="form-label">Appointment Date:</label>
+            <input type="date" class="form-control" id="exampleAppointmentDate" name="AppointmenDate">
+            <label for="exampleAppointmentTime" class="form-label">Appointment Time:</label>
+            <input type="time" class="form-control" id="exampleAppointmentTime" name="AppointmenTime">
+        </div>
+      <br><br>
+    <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createModal">Create Appointment</a>
+    </form>
+
+</div>
+
+<!-- Modal (pop message)-->
+<div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="createModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="createModalLabel">Appointment Completed</h5>
+            </div>
+            <div class="modal-body">
+                Your appointment has been successfully completed,Thank you!
+            </div>
+            <div class="modal-footer">
+ 
+                <a href="/Appointment/ShowAppointment" class="btn btn-secondary">OK</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var createModal = document.getElementById('createModal');
+    createModal.addEventListener('show.bs.modal', function (event) {
+        var button = event.relatedTarget;
+        var categoryId = button.getAttribute('data-categoryid');
+        var input = document.getElementById('categoryIdInput');
+        input.value = categoryId;
+    });
+</script>

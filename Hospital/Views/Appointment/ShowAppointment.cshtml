@@ -1,0 +1,36 @@
+﻿<div class="row">
+    <div class="col-9 mb-3">
+        <h2>All Appointments</h2>
+    </div>
+  
+</div>
+
+<div class="row">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Patient Name</th>
+                <th scope="col">Appointment Date</th>
+                <th scope="col">Appointment Time</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr class="table-light">
+                    <th scope="row">@item.Id</th>
+                    <td>@item.PatientName</td>
+                    <td>@item.AppointmentDate</td>
+                    <td>@item.AppointmentTime</td>
+
+                     <td>
+
+                     
+                     </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
